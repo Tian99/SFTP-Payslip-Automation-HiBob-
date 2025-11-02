@@ -1,0 +1,14 @@
+{
+  "EMP001": {
+    "email": "emp001@company.test",
+    "hibob_id": "HB001"
+  },
+  "EMP002": {
+    "email": "emp002@company.test",
+    "hibob_id": "HB002"
+  },
+  "EMP003": {
+    "email": "emp003@company.test",
+    "hibob_id": "HB003"
+  }
+}

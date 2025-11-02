@@ -1,0 +1,96 @@
+# ----------------------------
+# Python build / runtime files
+# ----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.so
+*.egg-info/
+.eggs/
+*.log
+*.sqlite3
+
+# ----------------------------
+# Virtual environments
+# ----------------------------
+.venv/
+env/
+venv/
+ENV/
+*.env
+.env.*
+*.local
+
+# ----------------------------
+# IDE / Editor
+# ----------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+*.bak
+
+# ----------------------------
+# OS / System
+# ----------------------------
+Thumbs.db
+Desktop.ini
+
+# ----------------------------
+# Project-specific
+# ----------------------------
+# Local payslip data and archive
+data/payslips/
+data/archive/
+data/tmp/
+data/*.csv
+data/*.json
+
+# Logs and metrics
+logs/
+*.jsonl
+metrics_output.json
+
+# Redis / ClickHouse local volumes (if docker-compose used)
+docker-data/
+clickhouse-data/
+redis-data/
+
+# ----------------------------
+# Test / temp files
+# ----------------------------
+.tmp/
+*.tmp
+*.out
+*.test
+*.retry
+*.bak
+*.orig
+
+# ----------------------------
+# Dependency management
+# ----------------------------
+pip-wheel-metadata/
+*.egg
+dist/
+build/
+
+# ----------------------------
+# Coverage / reports
+# ----------------------------
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.pytest_cache/
+coverage.xml
+test-results.xml
+
+# ----------------------------
+# Mac / Linux cache
+# ----------------------------
+__MACOSX/
+.cache/
