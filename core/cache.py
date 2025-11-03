@@ -6,7 +6,7 @@ try:
 except Exception:
     redis = None
 
-from logger import logger
+from observibility.logger import logger
 
 class Cache:
     def __init__(self, url: str | None):

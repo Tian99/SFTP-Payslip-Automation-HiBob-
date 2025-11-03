@@ -1,4 +1,4 @@
-from logger import logger
+from observibility.logger import logger
 
 def slack_notify(text: str, **ctx):
     logger.info("slack_notify", text=text, **ctx)

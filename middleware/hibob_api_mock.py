@@ -1,7 +1,7 @@
 import random
 from typing import Dict, Any
-from logger import logger
-from metrics import inc
+from observibility.logger import logger
+from observibility.metrics import inc
 
 def find_employee(employees: dict, employee_id: str) -> Dict[str, Any] | None:
     return employees.get(employee_id)

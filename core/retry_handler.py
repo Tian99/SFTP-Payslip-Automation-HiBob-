@@ -1,5 +1,5 @@
 import time
-from logger import logger
+from observibility.logger import logger
 
 def retry(fn, attempts: int, base_delay: float, *args, **kwargs):
     last = None

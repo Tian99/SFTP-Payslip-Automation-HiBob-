@@ -1,6 +1,6 @@
 from pathlib import Path
 from shutil import copy2
-from logger import logger
+from observibility.logger import logger
 
 def ensure_dir(path: str):
     Path(path).mkdir(parents=True, exist_ok=True)

@@ -1,11 +1,11 @@
 import json, os
 import click
-from cache import Cache
+from core.cache import Cache
 from orchestrator import Orchestrator
-from logger import logger
+from observibility.logger import logger
 from dotenv import load_dotenv
-import config
-from sftp_listener import list_payslips
+from core import config
+from middleware.sftp_listener import list_payslips
 
 load_dotenv(override=True)
 

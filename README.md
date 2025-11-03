@@ -142,7 +142,7 @@ python main.py run --input data/payslips --fail-rate 0.3
 
 ### 6.5 Clean Cache
 ```bash
-python tools/clear_cache.py
+python python -m tools.clear_cache
 ```
 
 ## 7. Sample Output
