@@ -124,6 +124,10 @@ source .venv/bin/activate
 pip install -r requirements.txt
 docker compose up -d   # Redis + ClickHouse
 ```
+### 6.1.5 Unit Testing
+```bash
+pytest -v
+```
 
 ### 6.2 Generate Demo Payslips
 ```bash
@@ -131,16 +135,19 @@ python tools/seed_demo_files.py
 ```
 
 ### 6.3 Run the Pipeline
+Info displayed based on local payslip files
 ```bash
 python main.py run --input data/payslips
 ```
 
 ### 6.4 Simulate Failures & Retries
+Need to manually clean cache (6.5) for different results
 ```bash
 python main.py run --input data/payslips --fail-rate 0.3
 ```
 
 ### 6.5 Clean Cache
+Would be triggered automatically for prod environment
 ```bash
 python python -m tools.clear_cache
 ```

@@ -1,6 +1,12 @@
 import time
 from observibility.logger import logger
 
+"""
+Retry utility — executes a function with exponential backoff.
+Used to handle transient failures (e.g., network or API errors)
+by retrying a fixed number of times before raising the exception.
+"""
+
 def retry(fn, attempts: int, base_delay: float, *args, **kwargs):
     last = None
     for i in range(1, attempts + 1):

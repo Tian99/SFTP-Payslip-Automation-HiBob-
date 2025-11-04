@@ -1,5 +1,11 @@
 import os
 
+"""
+Configuration module — loads environment variables with sane defaults.
+Used to control Redis connection, archive paths, retry behavior, and
+failure simulation rate for the orchestration pipeline.
+"""
+
 REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
 ARCHIVE_DIR = os.getenv("ARCHIVE_DIR", "../data/archive")
 MAX_QPS_PER_EMPLOYEE = float(os.getenv("MAX_QPS_PER_EMPLOYEE", "3"))

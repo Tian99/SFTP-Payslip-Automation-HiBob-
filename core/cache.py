@@ -1,6 +1,11 @@
 from typing import Optional
 from contextlib import suppress
 
+"""
+Cache module — provides a simple abstraction layer for Redis-based caching
+with automatic in-memory fallback.  
+Used for deduplication, rate limiting, and temporary state storage.
+"""
 try:
     import redis
 except Exception:

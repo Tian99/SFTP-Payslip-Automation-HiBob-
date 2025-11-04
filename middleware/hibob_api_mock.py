@@ -3,6 +3,12 @@ from typing import Dict, Any
 from observibility.logger import logger
 from observibility.metrics import inc
 
+"""
+Mock HiBob API integration.
+Simulates employee lookup and payslip upload behavior for testing the automation pipeline.
+Includes configurable fail_rate to mimic real-world transient upload errors.
+"""
+
 def find_employee(employees: dict, employee_id: str) -> Dict[str, Any] | None:
     return employees.get(employee_id)
 

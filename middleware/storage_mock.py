@@ -2,6 +2,12 @@ from pathlib import Path
 from shutil import copy2
 from observibility.logger import logger
 
+"""
+Mock storage module.
+Simulates encryption and archiving of processed payslips by copying them into an archive folder.
+In a real system, this step would perform encryption and secure upload to cloud/object storage.
+"""
+
 def ensure_dir(path: str):
     Path(path).mkdir(parents=True, exist_ok=True)
 

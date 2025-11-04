@@ -7,6 +7,19 @@ from dotenv import load_dotenv
 from core import config
 from middleware.sftp_listener import list_payslips
 
+"""
+Command-line entrypoint for the Payslip Automation system.
+This script loads employee data, initializes the orchestrator,
+and processes all payslips in a specified folder.
+
+Usage:
+  python main.py run --input data/payslips --fail-rate 0.3
+
+Options:
+  --input/-i     Folder containing payslip PDFs.
+  --fail-rate    Override simulated upload failure rate (0–1).
+"""
+
 load_dotenv(override=True)
 
 def load_employees(path="data/employees.json"):

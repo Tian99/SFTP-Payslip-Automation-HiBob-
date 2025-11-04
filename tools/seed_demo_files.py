@@ -1,6 +1,12 @@
 from pathlib import Path
 from datetime import datetime
 
+"""
+Utility script to generate mock payslip PDF files for testing.
+Each file is named as EMP<ID>_<YYYYMM>.pdf and placed under data/payslips/.
+The content is a minimal fake PDF header — just for simulation purposes.
+"""
+
 base = Path("data/payslips")
 base.mkdir(parents=True, exist_ok=True)
 

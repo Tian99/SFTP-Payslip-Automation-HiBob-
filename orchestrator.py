@@ -9,6 +9,24 @@ from middleware.storage_mock import encrypt_copy
 from observibility.metrics import inc, snapshot
 import re, os
 
+"""
+Orchestrator — Core workflow manager for payslip processing.
+
+This component coordinates the end-to-end pipeline:
+1. Scans payslip PDFs in a folder.
+2. Deduplicates using checksum and Redis cache.
+3. Parses employee metadata from filename (e.g., EMP001_202511.pdf).
+4. Uploads each payslip to the (mocked) HR API with retry logic.
+5. Archives successfully processed files.
+6. Emits metrics and logs for observability and FinOps tracking.
+
+Key integrations:
+- Cache (Redis or in-memory)
+- HiBob API mock for uploads
+- Slack notifications for errors and success
+- Prometheus-style counters via `observibility.metrics`
+"""
+
 EMP_RE = re.compile(r"^(?P<emp>[A-Za-z0-9]+)_(?P<ym>\d{6})\.pdf$")
 
 class Orchestrator:

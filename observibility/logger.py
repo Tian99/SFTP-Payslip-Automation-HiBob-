@@ -2,7 +2,14 @@ from loguru import logger
 import sys
 import uuid
 import os
-from datetime import datetime
+from datetime import datetime, UTC
+
+"""
+Centralized logging configuration using Loguru.
+- Provides colorized console logs in local/dev environments.
+- Switches to structured JSON logs in production for ingestion by ELK/Loki.
+- Includes a helper `with_trace()` to attach trace_id and timestamp to log context.
+"""
 
 ENV = os.getenv("ENV", "local").lower()
 
@@ -26,7 +33,7 @@ else:
     )
 
 def with_trace(extra=None):
-    base = {"trace_id": str(uuid.uuid4()), "ts": datetime.utcnow().isoformat() + "Z"}
+    base = {"trace_id": str(uuid.uuid4()), "ts": datetime.now(UTC).isoformat()}
     if extra:
         base.update(extra)
     return base
